@@ -42,7 +42,7 @@ class userServ{
         if(!tokenPret){
             throw apiError.Unauthorized()
         }
-        const valid = await tokenServ.refreshValidator(refresh)
+        const valid = tokenServ.refreshValidator(refresh)
 
         if(!valid){
             throw apiError.Unauthorized()
